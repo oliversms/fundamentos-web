@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* o :root serve para criar variaveis no CSS */
+/* Obrigatoriamente toda variavel deve iniciar com -- */
+/* Pode ser utilizado para outros valores, como medidas, mas geralmente é usado para as cores mesmo */
+:root {
+  --amarelo: #e4f73a;
+  --vinho: #6c0f2a;
+  --azul: #6495ed;
+  --branco: #eeeeee;
+  --preto: #151313;
+}
+
+/* Selecionando *(todos) os elementos e definindo que não terão margem nem paddin, e terão uma fonte padrão */
+/* o nome pratico para isso é reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background:linear-gradient(135deg, #6495ED 0%, #64ADED 51%);
+  color: var(--preto);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+nav {
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* quando necessário chamar uma das variaveis, usar a sintaxe "var(--variavel)" */
+nav p {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--vinho);
+}
+
+nav p span {
+  color: var(--amarelo);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  padding: 1rem;
+  justify-content: flex-end;
+}
+
+nav a {
+  color: var(--vinho);
+  font-size: 1.75rem;
+  text-decoration: none;
+  font-weight: 800;
+  transition: color 0.5s;
+}
+
+/* efeitinho do menu, da barrinha indo da esquerda pra direita */
+.underline {
+  display: inline;
+  position: relative;
+  overflow: hidden;
+}
+.underline:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  width: 0;
+  bottom: -5px;
+  background: var(--amarelo);
+  height: 2px;
+  transition-property: width;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+.underline:hover:after,
+.underline:focus:after,
+.underline:active:after {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+
+/* min-height garante uma altura minima para o elemento, mas caso necessário, ele pode crescer mais */
+main {
+  width: 80vw;
+  min-height: 80vh;
+}
+
+/* como tanto h1 como h2 precisarão ter os mesmo parametros, podemos separar eles por uma virgula */
+h1,
+h2 {
+  font-size: 3rem;
+  text-align: center;
+  color: var(--branco);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.banner {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 2rem;
+  align-items: center;
+  border: 1px solid var(--vinho);
+  background-color: #6c0f2aee;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 2rem 0;
+  -webkit-box-shadow: 5px 8px 20px 0px var(--vinho);
+  box-shadow: 5px 8px 20px 0px var(--vinho);
+}
+
+.fotoPerfil {
+  border-radius: 1rem;
+  /* vai escolher o maior tamanho entre 10rem (160px), ou 20% da tela... quem for maior, vai ser usado */
+  width: max(10rem, 20%);
+  aspect-ratio: 1;
+  border: 3px solid var(--amarelo);
+  padding: 5px;
+}
+
+.textoBanner {
+  font-size: 1.5vw;
+  letter-spacing: 2px;
+  line-height: 2.5rem;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--branco);
+}
+
+.video {
+  width: 65vw;
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+  border: 3px solid var(--amarelo);
+  display: block;
+  margin: 1rem auto;
+}
+
+.contato {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  color: var(--branco);
+}
+
+.form {
+  width: 45%;  
+}
+
+.form form {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(108, 15, 42, 0.37);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem
+}
+
+label {
+  font-size: 1.175rem;
+  font-weight: 600;
+  color: var(--vinho);
+  margin-left: 1rem;
+}
+
+input, textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--amarelo);
+  width: 100%;
+  resize: none;
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  color: var(--vinho);
+  font-weight: 600;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--vinho);
+  font-weight: 300;
+}
+
+button {
+  padding: .5rem 1rem;
+  display: block;
+  width: 75%;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  font-weight: 800;
+  border: 2px solid var(--vinho);
+  background-color: transparent;
+  transition: background .4s;
+  cursor: pointer;
+  color: var(--vinho);
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: var(--vinho);
+  color: var(--branco)
+}
+
+.endereco h2 {
+  color: var(--vinho);
+  font-size: 1.5rem;
+}
+
+.mapa {
+  width: 100%;
+  aspect-ratio: 16/12;
+  border-radius: 8px;
+  border: 3px solid var(--amarelo);
+}
+
+.endereco {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+footer {
+  height: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer p {
+  color: var(--branco);
+  font-size: 1.5rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--vinho);
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* @media se refere ao dispositivo que esta sendo utilizado, por não indicar qual é, serve para a tela */
+/* max-width => até um tamanho máximo de 780px, ou seja, para telas
+menores que isso, essas regras abaixo valem mais que as de cima */
+
+@media (max-width: 780px){
+
+  /* aqui dentro eu vou chamando as mesmas classes que tenho lá em cima, 
+  e fazendo os ajustes conforme necessário */
+  .banner {
+    flex-direction: column-reverse;
+  }
+
+  .fotoPerfil {
+    width: 80%;
+  }
+
+  .textoBanner {
+    font-size: 1.5rem;
+  }
+
+  .contato {
+    flex-direction: column-reverse;
+  }
+  
+  .form {
+    width: 90%;
+  }
+}
