@@ -1,55 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial scale=1.0">
-    <title>Contato</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contato</title>
+   <link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
 
-    <ul>
-        <li>
-            <a href="index.html"> Home </a>
+   <ul id="menu">
+      <li>
+         <a href="index.html"> Home </a>
+      </li>
+      <li>
+         <a href="contato.html"> Contato </a>
+      </li>
+   </ul>
 
-        </li>
+   <h1 class="center">Entre em contato comigo</h1>
 
-        <li>
-            <a href="contato.html"> Contato </a>
+   <div class="container mb-50">
+      <div>
+         <form>
+            <label for="nome">Nome:</label> <br>
+            <input type="text" id="nome" onkeyup='validaNome()'>
+            <div id='txtNome'></div>
+            <br>
+            <label for="email">E-mail:</label> <br>
+            <input type="email" id="email" onkeyup='validaEmail()'>
+            <div id='txtEmail'></div>
+            <br>
+            <label for="assunto">Assunto:</label> <br>
+            <textarea name="assunto" id="assunto" cols="60" rows="5" onkeyup="validaAssunto()"></textarea>
+            <div id='txtAssunto'></div>
+            <br>
+            <br>
+            <button onclick="enviar()" >Enviar</button>
+         </form>
+      </div>
 
-        </li>
+      <div class="ml-50">
 
-    </ul>
+         <p>Av. Pedro miranda, 2884</p>
+         <p>Belém - PA</p>
+      
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.598806278099!2d-48.46484689999999!3d-1.4166596999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a48be998401145%3A0x8d3238323443ca74!2sAv.%20Pedro%20Miranda%2C%202884%20-%20Pedreira%2C%20Bel%C3%A9m%20-%20PA%2C%2068447-000!5e0!3m2!1spt-BR!2sbr!4v1666880534603!5m2!1spt-BR!2sbr" 
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+       </iframe> 
+      </div>
+   </div>
 
-    <h1>Entre em contato comigo</h1>
 
-    <form>
+   <hr>
+   <footer>
 
-        <label for="nome">Nome:</label> <br>
-        <input type="text" id="nome">
-<br>
-<br>
-        <label for="email">E-mail:</label> <br>
-        <input type="email" id="email">
+      
+    <div class="container">
+    <a href="https://github.com/oliversms" target="_blank">
+       <img class="tm-social p-30" src="assets/img/github.jp" alt="Logo do github">
+    </a>
+    
+ </div>
 
- <br>   
- <br>
-        <label for="assunto">assunto:</label> <br>
-        <textarea name="assunto" id="assunto" cols="30" rows="10"></textarea>
-        <br>
-        <br>
-        <button>Enviar</button>
-    </form>
+      <p class="center">
+         Todos os direitos reservados: Silvia Santana &copy
+      </p> 
+   </footer>
 
-    <h2>Endereço:</h2>
-
-    <p>Av.Paula ferreira , 100</p>
-    <p>Sao paulo - SP</p>
-
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.8524421877332!2d-46.7006278!3d-23.5018238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef851cac42ecd%3A0xe63f2835f5e3a0ef!2sAv.%20Paula%20Ferreira%2C%20100%20-%20Vila%20Pirituba%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002916-000!5e0!3m2!1spt-BR!2sbr!4v1666668730316!5m2!1spt-BR!2sbr"
-     width="600" height="450" style="border:0;"
-    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+   <script src="assets/script.js"></script>
+   
 </body>
-
 </html>
