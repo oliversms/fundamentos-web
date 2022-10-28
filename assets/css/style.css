@@ -22,7 +22,7 @@
  
  #menu li a {
     text-decoration: none;
-    color: #e69986;
+    color: #a15541;
     font-size: 20px;
  }
  
@@ -55,3 +55,6 @@
  
  /*Estilos da página contato.html*/
  
+ .ml-50 {
+   margin-left: 50px;
+}
